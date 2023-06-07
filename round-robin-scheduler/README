@@ -1,0 +1,35 @@
+CS4760 Project 4 Bryce Paubel 3/29/23
+Operating system simulator scheduler
+
+Compilation:
+	To compile this project, type 'make' in the project directory to use the given makefile
+	
+	Usage:
+		./oss [-h] [-f logfile_name]
+   
+  Ex:
+    ./oss -f log.txt OR ./oss
+
+Note:
+  I implemented my indications for the child processes a little differently. I used negative values to indicate blocking instead of termination.
+  
+  There will also be header comments that will be from Project 2/3 because they have been lifted from those projects with little modification
+  
+  Another note - I don't have a super great reference for the time it takes to perform certain operations, so some time may seem much smaller than
+  they should be and others much longer than they should be. I tried my best to make them make sense.
+
+Version Control:
+	A git logfile entitled 'proof_of_verion_control' is contained within the project directory for proof of version control.
+	The .git file is also included within the project directory
+
+Testing:
+	A simple bash script was included which runs the project. It creates and deletes a log file. The main thing it does is makes sure that the outputs are consistent,
+  i.e. that we scheduled and blocked processes as often as the scheduler says we did. These outputs must be confirmed visually. There is also a test program
+  for the queue implementations, and instructions for running it are stored in the source file.
+
+Encountered Problems:
+  The hardest part of this project for me was actually the statistics. I was getting quite a few overflow errors since I tried using nanoseconds, but I swapped
+  to (seconds, nanoseconds) and then used unsigned long longs to do calculations later, which seemed to fix my errors. I also had a hard time trying to decide
+  where to keep information, since there are of course many ways to design this system.
+  
+  There were also quite a few little details that caused difficulties, but I was able to iron out bugs and the like.

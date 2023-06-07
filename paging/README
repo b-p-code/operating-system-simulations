@@ -1,0 +1,33 @@
+CS4760 Project 6 Bryce Paubel 4/29/23
+Operating system memory management using paging
+
+Compilation:
+	To compile this project, type 'make' in the project directory to use the given makefile
+	
+	Usage:
+		./oss [-h] [-f logfile_name]
+   
+  Ex:
+    ./oss -f log.txt OR ./oss
+
+Note:
+  I used a lot of code from old projects (as was encouraged), so header files may state that they are from project 1-5.
+
+Version Control:
+	A git logfile entitled 'proof_of_verion_control' is contained within the project directory for proof of version control.
+	The .git file is also included within the project directory
+
+Testing:
+	A simple bash script was included which runs the project. It creates and deletes a log file. The main thing it does is makes sure that the outputs are consistent,
+  i.e. that the statistics line up with the outputs. These outputs must be confirmed visually.
+
+Encountered Problems:
+  I found this project to be pretty enjoyable. The hardest thing was actually finding
+  small bugs that I encountered. For example, I had a line in my program which would
+  write to the logfile if the logfile was NULL, causing a lot of resource errors
+  that seemed to come from nowhere. Luckily I was able to debug the program through
+  gdb to find this odd error.
+  
+  I also had a hard time structuring the project, and deciding where things should go.
+  I decided it would be best to keep the page tables outside of the process tables,
+  since that would make it easier to leave my original source code alone.
